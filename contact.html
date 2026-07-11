@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AI Toolshed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Padauk:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --board:#2b2119; --board-dark:#211913; --tag-cream:#f3ead4;
+    --orange:#e8622c; --teal:#3e7268; --mustard:#d3a029;
+    --ink:#241a12; --ink-soft:#6b5c48; --thread:#8a7a5f;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:linear-gradient(180deg, var(--board) 0%, var(--board-dark) 100%); color:var(--tag-cream); font-family:'Padauk','Space Mono',monospace;}
+  .display{font-family:'Oswald','Padauk',sans-serif; text-transform:uppercase; letter-spacing:0.02em;}
+  a{color:var(--orange);}
+  header{padding:56px 24px 20px; text-align:center;}
+  .kicker{display:inline-flex; align-items:center; gap:10px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.35em; color:var(--mustard); margin-bottom:16px;}
+  .kicker::before, .kicker::after{content:"";width:28px;height:1px;background:var(--mustard);opacity:0.6;}
+  h1{font-size:clamp(28px,5vw,44px); margin:0 0 10px;}
+  h1 span{color:var(--orange);}
+  main{max-width:640px; margin:0 auto; padding:20px 24px 60px;}
+  .card{background:var(--tag-cream); color:var(--ink); border-radius:10px; padding:34px 30px; box-shadow:0 10px 0 rgba(0,0,0,0.18), 0 16px 26px rgba(0,0,0,0.35);}
+  .card p{font-size:15px; line-height:1.8; color:var(--ink-soft); margin:0 0 14px;}
+  .back{display:inline-block; margin:0 auto 30px; text-align:center; width:100%; font-family:'Oswald',sans-serif; letter-spacing:0.06em; text-transform:uppercase; font-size:13px;}
+  label{display:block; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.06em; font-size:12.5px; color:var(--ink); margin:16px 0 6px;}
+  input, textarea{
+    width:100%; padding:12px 14px; border-radius:6px; border:1px solid #d7c6a3;
+    font-family:'Padauk',sans-serif; font-size:14px; background:#fffaf0; color:var(--ink);
+  }
+  textarea{min-height:120px; resize:vertical;}
+  button{
+    margin-top:20px; background:var(--orange); color:#fff5ea; border:none; padding:14px 26px;
+    border-radius:6px; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.08em;
+    font-size:13px; font-weight:600; cursor:pointer; box-shadow:0 5px 0 #a8431a;
+  }
+  button:hover{transform:translateY(-2px);}
+  .note{font-size:12.5px; color:var(--ink-soft); margin-top:14px;}
+  footer{text-align:center; padding:40px 20px 50px; color:#8a7a5f; font-size:12.5px; border-top:2px dashed var(--thread); max-width:640px; margin:0 auto;}
+  .foot-links{display:flex; justify-content:center; flex-wrap:wrap; gap:22px; margin-bottom:18px; font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.08em; font-size:13px;}
+  .foot-links a{color:var(--tag-cream); opacity:.85; text-decoration:none;}
+  .foot-links a:hover{color:var(--orange); opacity:1;}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">GET IN TOUCH</div>
+  <h1 class="display">Contact <span>Us</span></h1>
+</header>
+<main>
+  <p class="back"><a href="index.html">← Tool စာရင်း ပြန်ကြည့်ရန်</a></p>
+  <div class="card">
+    <p>Tool အသစ်တစ်ခု ထပ်ထည့်စေချင်တာ ရှိတဲ့၊ broken link တွေ့ရှိတာ ရှိတဲ့၊ ဒါမှမဟုတ် ဘယ်လို feedback ပဲဖြစ်ဖြစ် အောက်ကဖောင်ကို ဖြည့်ပြီး ပို့ပေးနိုင်ပါတယ်။</p>
+
+    <!-- 
+      GMAIL ချိတ်ဆက်နည်း — formspree.io မှာ free account လုပ်ပြီး
+      "YOUR_FORM_ID" ဆိုတာကို သင့်ကိုယ်ပိုင် Formspree form ID နဲ့ အစားထိုးပါ။
+      (ဥပမာ - action="https://formspree.io/f/abcdwxyz")
+      အောက်က setup instructions အတိုင်း လုပ်ပါ။
+    -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">အမည်</label>
+      <input type="text" id="name" name="name" required placeholder="သင့်အမည်">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required placeholder="you@example.com">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="ဘာကူညီပေးရမလဲ ရေးပါ..."></textarea>
+      <input type="hidden" name="_subject" value="AI Toolshed - Contact form message">
+
+      <button type="submit">Message ပို့ရန်</button>
+    </form>
+    <p class="note">မှတ်ချက် — အထက်က form ID ကို ကိုယ်ပိုင် Formspree endpoint နဲ့ အစားထိုးမှသာ သင့် Gmail ထဲ message တွေ ရောက်ပါလိမ့်မယ်။ Setup လုပ်နည်းကို ဒီ chat message ရဲ့ အောက်ပိုင်းမှာ ကြည့်ပါ။</p>
+  </div>
+</main>
+<footer>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <p>© 2026 AI Toolshed.</p>
+</footer>
+</body>
+</html>
